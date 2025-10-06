@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Rust Gym App{% endblock %}</title>
+    <link rel="stylesheet" href="/public/styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <a href="/" class="logo">🦀 Chad Gym App</a>
+        <ul class="nav-links">
+          <li><a href="/learn">Learn</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container">{% block content %}{% endblock %}</main>
+
+    <footer>
+      <p>&copy; 2024 Rust Gym App - Built vcangel in 🦀</p>
+    </footer>
+  </body>
+</html>
