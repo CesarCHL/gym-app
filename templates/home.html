@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% block title %}{{ title }}{% endblock %} {% block
+content %}
+<div class="hero">
+  <h1>{{ title }}</h1>
+  <p class="subtitle">{{ description }}</p>
+</div>
+
+<section class="features">
+  <div class="feature-card">
+    <h2>🚀 Fast</h2>
+    <p>Blazingly fast performance with Rust</p>
+  </div>
+
+  <div class="feature-card">
+    <h2>🔒 Safe</h2>
+    <p>Memory safety without garbage collection</p>
+  </div>
+
+  <div class="feature-card">
+    <h2>⚡ Concurrent</h2>
+    <p>Async/await and fearless concurrency</p>
+  </div>
+</section>
+
+<section class="getting-started">
+  <h2>Get Started</h2>
+  <ol>
+    <li>Edit <code>src/handlers.rs</code> to modify routes</li>
+    <li>Create new templates in <code>templates/</code></li>
+    <li>Save and cargo will rebuild automatically</li>
+  </ol>
+</section>
+
+<div class="cta-buttons">
+  <a href="/learn" class="btn btn-primary">Start Learning</a>
+  <a href="/docs" class="btn btn-secondary">Read Docs</a>
+</div>
+{% endblock %}
