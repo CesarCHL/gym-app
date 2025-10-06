@@ -176,5 +176,4 @@ mvn test -X
 
 Check out:
 - `README.md` - Full documentation
-- `MIGRATION.md` - Details about the Next.js to Spring Boot conversion
 - [Spring Boot Guides](https://spring.io/guides)
