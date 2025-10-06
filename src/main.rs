@@ -24,8 +24,6 @@ async fn main() {
     let app = Router::new()
         .route("/", get(handlers::home))
         .route("/learn", get(handlers::learn))
-        .route("/examples", get(handlers::examples))
-        .route("/docs", get(handlers::docs))
         // Serve static files from the "public" directory
         .nest_service("/public", ServeDir::new("public"));
 
