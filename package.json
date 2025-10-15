@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@types/gapi": "^0.0.47",
-    "next": "15.5.4",
-    "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "@types/mongoose": "^5.11.96",
+    "mongoose": "^8.19.1",
+    "next": "^15.5.5",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
