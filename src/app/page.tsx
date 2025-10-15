@@ -15,7 +15,7 @@ export default function Home() {
         }}
       />
       
-      {/* Dark Overlay */}
+      {/* Dark Overlay */}ad
       <div className="absolute inset-0 bg-black/70 z-10" />
       
       {/* Content */}
