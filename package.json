@@ -14,7 +14,6 @@
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@auth/mongodb-adapter": "^3.11.1",
     "@types/gapi": "^0.0.47",
     "@types/mongoose": "^5.11.96",
@@ -24,20 +23,6 @@
     "mongoose": "^8.19.1",
     "next": "15.5.4",
     "next-auth": "^5.0.0-beta.29",
-=======
-    "@libsql/client": "^0.15.15",
-    "@types/gapi": "^0.0.47",
-    "@types/mongoose": "^5.11.96",
-    "bcryptjs": "^3.0.2",
-    "cors": "^2.8.5",
-    "dotenv": "^17.2.3",
-    "drizzle-kit": "^0.31.5",
-    "drizzle-orm": "^0.44.7",
-    "express": "^5.1.0",
-    "mongoose": "^8.19.1",
-    "next": "15.5.4",
-    "next-auth": "^4.24.11",
->>>>>>> dee17c5fe48eaa84a2eb6a705ea36f480dda5393
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },
