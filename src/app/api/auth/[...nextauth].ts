@@ -1,6 +1,8 @@
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
 import connectDB from "@/lib/mongodb";
+import { Session } from "next-auth";
+import { JWT } from "next-auth/jwt";
 
 declare module "next-auth" {
   interface Session {
@@ -10,7 +12,7 @@ declare module "next-auth" {
           name?: string; 
           email?: string;
           image?: string; 
-          rentals?: any;
+          rentals?: unknown;
       };
   }
 }
@@ -37,7 +39,7 @@ export const authOptions = ({
     //   }
     //   return token;
     // },
-    async session({ session, token, user }: { session: any, token: any, user: any }) {
+    async session({ session, token }: { session: Session, token: JWT }) {
       const db = await connectDB();
       if (!db.connection || !db.connection.db) {
         throw new Error("Database connection is not established");
@@ -49,7 +51,7 @@ export const authOptions = ({
       }
 
       if (userRecord) {
-        session.user.id = userRecord._id;
+        session.user.id = userRecord._id.toString();
       } else {
         throw new Error("User record not found");
       }
@@ -57,7 +59,9 @@ export const authOptions = ({
       // session.refreshToken = token.refreshToken;
       return session;
     },
-    async signIn({ user, account, profile, email, credentials }: { user: any, account: any, profile?: any, email?: any, credentials?: any }) {
+    async signIn({ user }: { 
+      user: { email?: string | null; name?: string | null; image?: string | null }
+    }) {
       const db = await connectDB();
       if (!db.connection || !db.connection.db) {
         throw new Error("Database connection is not established");
@@ -70,7 +74,7 @@ export const authOptions = ({
 
       return true;
     },
-    async jwt({ token }: { token: any }) {
+    async jwt({ token }: { token: JWT }) {
       const db = await connectDB();
       if (!db.connection || !db.connection.db) {
         throw new Error("Database connection is not established");

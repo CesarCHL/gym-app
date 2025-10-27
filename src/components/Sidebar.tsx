@@ -123,24 +123,6 @@ export default function Sidebar() {
               {!isCollapsed && <span className="font-medium">Collapse</span>}
             </button>
           </div>
-
-          {/* User Profile */}
-          <div className="p-4 border-t border-gray-800 space-y-2">
-            <div
-              className={`flex items-center gap-3 px-4 py-3 rounded-lg ${
-                isCollapsed ? 'justify-center' : ''
-              }`}
-            >
-              <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center flex-shrink-0">
-                <span className="text-sm font-medium">U</span>
-              </div>
-              {!isCollapsed && (
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-medium truncate">User</p>
-                  <p className="text-xs text-gray-500 truncate">user@email.com</p>
-                </div>
-              )}
-            </div>
             
             <button
               onClick={handleLogout}
@@ -155,7 +137,6 @@ export default function Sidebar() {
               {!isCollapsed && <span className="font-medium">Logout</span>}
             </button>
           </div>
-        </div>
       </aside>
 
       {/* Mobile Overlay */}
