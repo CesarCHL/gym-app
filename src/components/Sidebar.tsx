@@ -8,6 +8,9 @@ export default function Sidebar() {
   const pathname = usePathname();
   const [isCollapsed, setIsCollapsed] = useState(false);
 
+  const handleLogout = async () => {
+  };
+
   const navItems = [
     {
       name: 'Dashboard',
@@ -122,10 +125,9 @@ export default function Sidebar() {
           </div>
 
           {/* User Profile */}
-          <div className="p-4 border-t border-gray-800">
-            <Link
-              href="/dashboard/profile"
-              className={`flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-all duration-200 ${
+          <div className="p-4 border-t border-gray-800 space-y-2">
+            <div
+              className={`flex items-center gap-3 px-4 py-3 rounded-lg ${
                 isCollapsed ? 'justify-center' : ''
               }`}
             >
@@ -134,11 +136,24 @@ export default function Sidebar() {
               </div>
               {!isCollapsed && (
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-medium truncate">User Profile</p>
-                  <p className="text-xs text-gray-500 truncate">View profile</p>
+                  <p className="text-sm font-medium truncate">User</p>
+                  <p className="text-xs text-gray-500 truncate">user@email.com</p>
                 </div>
               )}
-            </Link>
+            </div>
+            
+            <button
+              onClick={handleLogout}
+              className={`flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-red-600 hover:text-white transition-all duration-200 w-full ${
+                isCollapsed ? 'justify-center' : ''
+              }`}
+              title={isCollapsed ? 'Logout' : ''}
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+              </svg>
+              {!isCollapsed && <span className="font-medium">Logout</span>}
+            </button>
           </div>
         </div>
       </aside>
